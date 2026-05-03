@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="imagen/png" href="/Favicon_principal.png" />
+		<link rel="icon" type="imagen/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>ESI - Educacion Sexual Integral</title>
 		<meta
@@ -43,7 +43,29 @@
 			property="twitter:image"
 			content="https://esi-website-ten.vercel.app/Frame%201.png"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" /><link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/><link
+			href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+			rel="stylesheet"
+		/><style>
+			html.lenis {
+				height: auto;
+			}
+			.lenis.lenis-smooth {
+				scroll-behavior: auto;
+			}
+			.lenis.lenis-smooth [data-lenis-prevent] {
+				overscroll-behavior: contain;
+			}
+			.lenis.lenis-stopped {
+				overflow: hidden;
+			}
+		</style>
 	</head>
+
 	<body>
 		<slot />
 	</body>
@@ -57,3 +79,19 @@
 		height: 100%;
 	}
 </style>
+<script>
+	const lenis = new Lenis({
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		lerp: 0.08,
+		smooth: true,
+		mouseMultiplier: 1,
+		override: false,
+		touchMultiplier: 2,
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
+</script>

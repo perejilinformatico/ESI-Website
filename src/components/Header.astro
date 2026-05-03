@@ -1,0 +1,98 @@
+<nav>
+    <div>
+        <h1
+            style="font-family: 'Bungee', sans-serif; font-size: 2rem; animation: none; padding: 0; margin: 0;"
+        >
+            ESI
+        </h1>
+    </div>
+    <div class="flex justify-center items-center gap-10" id="desktop_nav">
+        <a href="">Inicio</a>
+        <a href="">Informacion</a>
+        <a href="">Contacto</a>
+        <button class="text-4xl" id="menu" style="">☰</button>
+    </div>
+</nav>
+<div id="menu_desplegable" style="display: none;" class="div">
+    <div>
+        <h1
+            style="font-family: 'Bungee', sans-serif; font-size: 4rem; animation: none; padding: 10px; margin: 0;"
+            class="p-10"
+        >
+            ESI
+        </h1>
+        <div class="p-5 flex flex-col gap-3 text-2xl">
+            <a href="#" class="a">Inicio</a>
+            <a href="#" class="a">Informacion</a>
+            <a href="#" class="a">Contacto</a>
+        </div>
+        <button
+            class="btn btn-warning"
+            style="margin: 50px;"
+            onclick="
+            setTimeout(() => {
+                document.getElementById('menu_desplegable').style.display = 'none';
+            }, 300);"
+            >Salir</button
+        >
+    </div>
+</div>
+<script>
+    const menu = document.getElementById("menu");
+    const mobile_nav = document.querySelector("#menu_desplegable");
+    const a = document.querySelectorAll(".a");
+    a.forEach((elemento) => {
+        elemento.addEventListener("click", () => {
+            mobile_nav.style.display = "none";
+        });
+    });
+    menu?.addEventListener("click", () => {
+        if (mobile_nav?.style.display === "none") {
+            mobile_nav.style.display = "flex";
+            mobile_nav.style.position = "fixed";
+            mobile_nav.style.width = "100%";
+            mobile_nav.style.height = "100vh";
+            mobile_nav.style.backgroundColor = "var(--cream)";
+            mobile_nav.style.borderBottom = "3px solid var(--dark)";
+            mobile_nav.style.flexDirection = "column";
+            mobile_nav.style.alignItems = "center";
+            mobile_nav.style.justifyContent = "center";
+            mobile_nav.style.gap = "1rem";
+            mobile_nav.style.transition = "all 0.3s ease-in-out";
+            mobile_nav.style.zIndex = "10";
+        } else {
+            mobile_nav.style.display = "none";
+        }
+    });
+</script>
+<style>
+    #menu {
+        display: none;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: calc(50% + 50%);
+        padding: 1rem 2rem;
+        background-color: var(--cream);
+        border-bottom: 3px solid var(--dark);
+    }
+    @media (max-width: 630px) {
+        #desktop_nav > a {
+            display: none;
+        }
+        #menu {
+            display: block;
+        }
+    }
+    #menu_desplegable {
+        text-align: center;
+        z-index: 10;
+        background-color: rgb(255, 255, 255);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+    }
+</style>
