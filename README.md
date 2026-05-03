@@ -1,7 +1,5 @@
 #  ESI Web — Educación Sexual Integral
 
-![ESI Banner](https://via.placeholder.com/1200x300?text=ESI+Web)
-
 ##  Descripción
 
 **ESI Web** es una plataforma educativa desarrollada para informar, concientizar y facilitar el aprendizaje sobre la **Educación Sexual Integral (ESI)** de manera accesible, visual e interactiva.
@@ -10,7 +8,7 @@ El objetivo principal del proyecto es ofrecer contenido claro y atractivo para a
 
 ---
 
-## 🚀 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 ![Astro](https://img.shields.io/badge/Astro-000?style=for-the-badge\&logo=astro)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge\&logo=tailwind-css)
