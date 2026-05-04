@@ -5,11 +5,38 @@ import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Info from "../components/Informacion.astro";
+import Contacto from "../components/contacto.astro";
 ---
 
 <Layout>
 	<Header />
 	<Hero />
-	<Info id="text_info" />
+	<Info />
+	<Contacto />
 	<Footer />
 </Layout>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
+
+<script type="module">
+	import Lenis from "@studio-freight/lenis";
+
+	const lenis = new Lenis({
+		duration: 1.2,
+		smooth: true,
+		direction: "vertical",
+		gestureDirection: "vertical",
+		smoothTouch: true, // importante para mobile
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
+</script>

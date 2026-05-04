@@ -1,0 +1,24 @@
+<section
+    id="contacto"
+    class="flex flex-col justify-center items-center py-10 p-10"
+    style="padding: 100px;"
+>
+    <div class="flex justify-center items-center">
+        <p class="text-4xl text-center">¿Te gustó la información?</p>
+    </div>
+    <div class="flex justify-center items-center m-10">
+        <button class="btn btn-primary" style="margin: 100px;" id="cafe">
+            Un cafecito (owO)?
+        </button>
+    </div>
+</section>
+
+<script>
+    const cafe = document.getElementById("cafe");
+    cafe.addEventListener("click", () => {
+        setTimeout(() => {
+            console.log("cafe");
+            window.location.href = "/recomendaciones";
+        }, 250);
+    });
+</script>

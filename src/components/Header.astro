@@ -7,9 +7,9 @@
         </h1>
     </div>
     <div class="flex justify-center items-center gap-10" id="desktop_nav">
-        <a href="">Inicio</a>
-        <a href="">Informacion</a>
-        <a href="">Contacto</a>
+        <a href="#">Inicio</a>
+        <a href="#text_info">Informacion</a>
+        <a href="#contacto">Contacto</a>
         <button class="text-4xl" id="menu" style="">☰</button>
     </div>
 </nav>
@@ -23,8 +23,8 @@
         </h1>
         <div class="p-5 flex flex-col gap-3 text-2xl">
             <a href="#" class="a">Inicio</a>
-            <a href="#" class="a">Informacion</a>
-            <a href="#" class="a">Contacto</a>
+            <a href="#text_info" class="a">Informacion</a>
+            <a href="#contacto" class="a">Contacto</a>
         </div>
         <button
             class="btn btn-warning"
@@ -72,6 +72,7 @@
     nav {
         display: flex;
         justify-content: space-between;
+        z-index: 999;
         align-items: center;
         position: fixed;
         width: calc(50% + 50%);
